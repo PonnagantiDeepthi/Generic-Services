@@ -82,6 +82,9 @@ public class CardImpl implements CardIface {
 	@Value("${card.pdf.name}")
 	private String pdfCard;
 
+	    @Value("${security.allowed-hosts}")
+    private List<String> allowedHosts;
+
 
 	RestTemplate restTemplate = new RestTemplate();
 
@@ -736,7 +739,7 @@ public class CardImpl implements CardIface {
 
 		try {
 
-
+				validateUrl(url);
 			HttpHeaders headers = new HttpHeaders();
 
 
@@ -897,6 +900,29 @@ public class CardImpl implements CardIface {
 			return AppUtil.createApiResponse(false, "Something went wrong", null);
 		}
 	}
+
+
+	private void validateUrl(String url) {
+        try {
+            URI uri = new URI(url);
+ 
+            // 1. Allow only http / https
+            if (uri.getScheme() == null ||
+                    (!"http".equalsIgnoreCase(uri.getScheme())
+&& !"https".equalsIgnoreCase(uri.getScheme()))) {
+                throw new IllegalArgumentException("Invalid URL scheme");
+            }
+ 
+            // 2. Allow only configured hosts
+            String host = uri.getHost();
+            if (host == null || !allowedHosts.contains(host)) {
+                throw new IllegalArgumentException("Host not allowed");
+            }
+ 
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Invalid or unsafe URL");
+        }
+    }
 
 
 
