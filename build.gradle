@@ -48,6 +48,9 @@ dependencies {
     implementation 'com.itextpdf:itext7-core:7.2.0'
 
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.0'
+	
+	// Pin transitive dependency to fix security vulnerability
+	implementation 'io.netty:netty-handler:4.1.118.Final'
 }
 
 ext {
