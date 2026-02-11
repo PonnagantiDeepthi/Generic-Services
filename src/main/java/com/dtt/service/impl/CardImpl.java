@@ -739,7 +739,7 @@ public class CardImpl implements CardIface {
 
 		try {
 
-				validateUrl(url);
+				validateUrl(imageUrl);
 			HttpHeaders headers = new HttpHeaders();
 
 
