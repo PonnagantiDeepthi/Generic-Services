@@ -49,6 +49,7 @@ dependencies {
 
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.0'
 	 implementation 'io.netty:netty-codec-http:4.1.129.Final'
+	 implementation 'io.netty:netty-handler:4.1.118.Final'
 }
 
 ext {
