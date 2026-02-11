@@ -52,6 +52,10 @@ dependencies {
 	 implementation 'io.netty:netty-handler:4.1.118.Final'
 	implementation 'org.bouncycastle:bcprov-jdk15on:1.78'
 	
+	// Version constraints for transitive dependencies
+	constraints {
+		implementation 'io.grpc:grpc-netty-shaded:1.75.0'
+	}
 }
 
 ext {
