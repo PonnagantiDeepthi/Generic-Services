@@ -40,7 +40,7 @@ dependencies {
 	
 	implementation 'org.springframework.kafka:spring-kafka'
 	
-    implementation 'com.google.firebase:firebase-admin:9.3.0'
+    implementation 'com.google.firebase:firebase-admin:9.4.0'
     
     //implementation 'org.json.json:20200518'
     implementation 'org.json:json:20240303'
