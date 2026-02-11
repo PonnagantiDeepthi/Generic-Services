@@ -51,6 +51,7 @@ dependencies {
 	 implementation 'io.netty:netty-codec-http:4.1.129.Final'
 	 implementation 'io.netty:netty-handler:4.1.118.Final'
 	implementation 'org.bouncycastle:bcprov-jdk18on:1.78'
+	implementation 'io.grpc:grpc-netty-shaded:1.75.0'
 	
 }
 
